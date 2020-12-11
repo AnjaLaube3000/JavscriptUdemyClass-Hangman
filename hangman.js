@@ -1,8 +1,5 @@
 // Excersise
-// method to make a guess
-// 1. only accepts characters
-// 2. should add unique guesses to guessed letters array
-// 3. should decrement the guesses Left if a unique guess isnt a match
+// 1.. display the puzzle to the browser instead to the console
 
 const Hangman = function (word, possibleGuesses) {
   this.word = word.toLowerCase().split('')
@@ -20,11 +17,6 @@ Hangman.prototype.getPuzzle = function () {
       puzzle += '*'
     }
   })
-  // if (this.possibleGuesses > 0) {
-  //   console.log(`Remaining guesses :${this.possibleGuesses}`)
-  // } else {
-  //   console.log('Game over!')
-  // }
 
   return puzzle
 }
@@ -44,8 +36,6 @@ Hangman.prototype.makeGuess = function (guess) {
   if (isUnique && isBadGuess) {
     this.possibleGuesses--
   }
-
-
 }
 
 const game1 = new Hangman("playground", 5)
